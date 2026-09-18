@@ -1,0 +1,84 @@
+package com.baitapnhom.courseweb.entity;
+
+import com.baitapnhom.courseweb.enums.EnrollmentStatus;
+
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "enrollments", uniqueConstraints = {
+    @UniqueConstraint(columnNames = {"student_id", "course_id"})
+})
+public class Enrollment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    // Giả định Student Entity đã được Thành viên 1 tạo
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id", nullable = false)
+    private Student student;
+
+    // Giả định Course Entity đã được Thành viên 2 tạo
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "course_id", nullable = false)
+    private Course course;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", length = 20)
+    private EnrollmentStatus status = EnrollmentStatus.ACTIVE;
+
+    @Column(name = "enroll_date", insertable = false, updatable = false)
+    private LocalDateTime enrollDate;
+
+    public Enrollment() {
+    }
+
+    public Enrollment(Student student, Course course, EnrollmentStatus status) {
+        this.student = student;
+        this.course = course;
+        this.status = status;
+    }
+
+    // Getters and Setters
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public EnrollmentStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(EnrollmentStatus status) {
+        this.status = status;
+    }
+
+    public LocalDateTime getEnrollDate() {
+        return enrollDate;
+    }
+
+    public void setEnrollDate(LocalDateTime enrollDate) {
+        this.enrollDate = enrollDate;
+    }
+}
