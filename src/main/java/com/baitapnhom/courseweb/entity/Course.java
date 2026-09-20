@@ -1,4 +1,4 @@
-package OOP_BTL_develop.demo.entity;
+package com.baitapnhom.courseweb.entity;
 
 
 import jakarta.persistence.*;
