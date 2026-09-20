@@ -10,10 +10,11 @@ import java.time.LocalDateTime;
     @UniqueConstraint(columnNames = {"student_id", "course_id"})
 })
 public class Enrollment {
-
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "id", columnDefinition = "VARCHAR(36)", updatable = false, nullable = false)
+    private String id;
 
     // Giả định Student Entity đã được Thành viên 1 tạo
     @ManyToOne(fetch = FetchType.LAZY)
@@ -42,11 +43,11 @@ public class Enrollment {
     }
 
     // Getters and Setters
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
