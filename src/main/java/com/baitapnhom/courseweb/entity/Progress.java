@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Table(name = "lesson_progress")
 public class Progress {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
     @ManyToOne(fetch = FetchType.LAZY)
