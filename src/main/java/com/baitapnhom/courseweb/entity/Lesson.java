@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Table(name = "lesson")
 public class Lesson {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
 //  Nhieu lesson thuoc 1 course
