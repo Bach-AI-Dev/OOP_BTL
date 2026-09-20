@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class Lesson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
 //  Nhieu lesson thuoc 1 course
     @ManyToOne
@@ -26,7 +26,7 @@ public class Lesson {
 
     private Integer lessonOrder;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
@@ -58,7 +58,7 @@ public class Lesson {
         return lessonOrder;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
