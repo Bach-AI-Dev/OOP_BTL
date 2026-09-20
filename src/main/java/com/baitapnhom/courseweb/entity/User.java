@@ -13,8 +13,8 @@ public class User {
 
     @Id
     // Kiểu id là những chuỗi được Random ngẫu nhiên không trùng lặp
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
     @Column(name = "full_name")
     private String fullName;
@@ -62,7 +62,7 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String fullName, String email, String password, String phone, Role role, String username) {
+    public User(String id, String fullName, String email, String password, String phone, Role role, String username) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
@@ -74,11 +74,11 @@ public class User {
 
     // Phần getter và setter
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
