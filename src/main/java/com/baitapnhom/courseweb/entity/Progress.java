@@ -9,8 +9,9 @@ import java.time.LocalDateTime;
 @Table(name = "lesson_progress")
 public class Progress {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "id",length = 36)
+    private String id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id", nullable = false)
@@ -33,11 +34,11 @@ public class Progress {
     private Integer lastPosition;
 
     public Progress() {}
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

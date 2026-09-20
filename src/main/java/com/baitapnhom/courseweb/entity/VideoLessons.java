@@ -6,8 +6,9 @@ import jakarta.persistence.*;
 @Table(name = "video_lessons")
 public class VideoLessons {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer lessonId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "lesson_id",length = 36)
+    private String lessonId;
 
     @Column(name = "url")
     private String url;
@@ -15,11 +16,11 @@ public class VideoLessons {
     @Column(name = "duration_seconds")
     private Integer durationSeconds;
 
-    public Integer getLessonId() {
+    public String getLessonId() {
         return lessonId;
     }
 
-    public void setLessonId(Integer lessonId) {
+    public void setLessonId(String lessonId) {
         this.lessonId = lessonId;
     }
 

@@ -9,8 +9,9 @@ import java.time.LocalDateTime;
 public class Student {
 
     @Id
-    @Column(name = "student_id")
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "student_id",length = 36)
+    private String studentId;
 
     @OneToOne(fetch = FetchType.LAZY)
     @MapsId // Báo cho Spring Boot biết: Hãy lấy ID của User làm ID của Student
@@ -25,12 +26,12 @@ public class Student {
     }
 
     // Getters and Setters
-    public Integer getId() {
-        return id;
+    public String getStudentId() {
+        return studentId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setStudentId(String id) {
+        this.studentId = id;
     }
 
     public LocalDateTime getCreatedAt() {
