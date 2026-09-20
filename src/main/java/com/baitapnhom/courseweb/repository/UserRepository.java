@@ -8,7 +8,7 @@ import com.baitapnhom.courseweb.entity.User;
 
 // Kế thừa siêu nạp extends JpaRepository<User, Long>
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, String> {
 
     // existsByUsername và existsByEmail trả về true nếu tìm thấy ngược lại trả về
     // false
