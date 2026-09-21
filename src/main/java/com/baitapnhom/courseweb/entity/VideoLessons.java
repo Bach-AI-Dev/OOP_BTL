@@ -6,13 +6,12 @@ import jakarta.persistence.*;
 @Table(name = "video_lessons")
 public class VideoLessons {
     @Id
-    @Column(name = "lesson_id")
     private String id;
 
     // Liên kết 1-1 với Lesson
     @OneToOne
     @MapsId
-    @JoinColumn(name = "lesson_id")
+    @JoinColumn(name = "lesson_id",columnDefinition = "varchar(36)")
     private Lesson lesson;
 
     @Column(nullable = false)
