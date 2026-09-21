@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.baitapnhom.courseweb.dto.request.ApiResponse;
+import com.baitapnhom.courseweb.dto.response.ApiResponse;
 
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
