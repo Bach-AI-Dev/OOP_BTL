@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "lesson_progress")
-public class Progress {
+public class LessonProgress {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id",length = 36)
@@ -33,7 +33,7 @@ public class Progress {
     @Column(name = "last_position")
     private Integer lastPosition;
 
-    public Progress() {}
+    public LessonProgress() {}
     public String getId() {
         return id;
     }
@@ -66,11 +66,11 @@ public class Progress {
         this.watchedTimeSeconds = watchedTimeSeconds;
     }
 
-    public Boolean isCompleted() {
+    public Boolean getIsCompleted() {
         return isCompleted;
     }
 
-    public void setCompleted(Boolean completed) {
+    public void setIsCompleted(Boolean completed) {
         isCompleted = completed;
     }
 
@@ -89,4 +89,5 @@ public class Progress {
     public void setLastPosition(Integer lastPosition) {
         this.lastPosition = lastPosition;
     }
+
 }

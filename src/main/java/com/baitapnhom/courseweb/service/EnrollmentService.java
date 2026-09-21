@@ -57,7 +57,7 @@ public class EnrollmentService {
         // Chuyển đổi từ Entity (Enrollment) sang DTO (EnrollmentResponse) để trả về Controller
         return enrollments.stream().map(enrollment -> new EnrollmentResponse(
                 enrollment.getId(),
-                enrollment.getCourse().getTitle(),
+                enrollment.getCourse() .getTitle(),
                 enrollment.getStatus().name(),
                 enrollment.getEnrollDate()
         )).collect(Collectors.toList());
