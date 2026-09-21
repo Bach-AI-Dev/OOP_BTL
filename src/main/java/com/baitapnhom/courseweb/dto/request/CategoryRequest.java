@@ -1,10 +1,10 @@
-package OOP_BTL_develop.demo.dto.request;
+package com.baitapnhom.courseweb.dto.request;
 
-public class CategoryCreationRequest {
+public class CategoryRequest {
     private String name;
     private String description;
 
-    public CategoryCreationRequest() {}
+    public CategoryRequest() {}
 
     public String getName() {
         return name;
