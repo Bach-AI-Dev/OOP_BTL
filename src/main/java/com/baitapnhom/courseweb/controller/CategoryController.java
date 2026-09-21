@@ -1,11 +1,10 @@
-package OOP_BTL_develop.demo.controller;
+package com.baitapnhom.courseweb.controller;
 
-import OOP_BTL_develop.demo.dto.request.CategoryCreationRequest;
-import OOP_BTL_develop.demo.entity.Category;
-import OOP_BTL_develop.demo.service.CategoryService;
+import com.baitapnhom.courseweb.dto.request.CategoryCreationRequest;
+import com.baitapnhom.courseweb.entity.Category;
+import com.baitapnhom.courseweb.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
     @RestController
