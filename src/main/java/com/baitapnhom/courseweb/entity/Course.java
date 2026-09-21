@@ -1,5 +1,4 @@
-package OOP_BTL_develop.demo.entity;
-
+package com.baitapnhom.courseweb.contity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
