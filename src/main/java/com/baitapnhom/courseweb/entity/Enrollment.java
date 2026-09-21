@@ -4,6 +4,7 @@ import com.baitapnhom.courseweb.enums.EnrollmentStatus;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "enrollments", uniqueConstraints = {
@@ -30,7 +31,8 @@ public class Enrollment {
     @Column(name = "status", length = 20)
     private EnrollmentStatus status = EnrollmentStatus.ACTIVE;
 
-    @Column(name = "enroll_date", insertable = false, updatable = false)
+    @CreationTimestamp
+    @Column(name = "enroll_date", updatable = false)
     private LocalDateTime enrollDate;
 
     public Enrollment() {
