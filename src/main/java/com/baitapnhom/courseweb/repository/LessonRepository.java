@@ -1,0 +1,13 @@
+package com.baitapnhom.courseweb.repository;
+
+import com.baitapnhom.courseweb.entity.Lesson;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface LessonRepository extends JpaRepository<Lesson, String> {
+    // Tìm tất cả bài học của một khóa học, sắp xếp theo thứ tự (lessonOrder) Tăng dần (Ascending)
+    List<Lesson> findByCourseIdOrderByLessonOrderAsc(String courseId);
+}
