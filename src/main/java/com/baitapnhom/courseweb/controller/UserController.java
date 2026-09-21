@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.baitapnhom.courseweb.dto.request.ApiResponse;
+import com.baitapnhom.courseweb.dto.response.ApiResponse;
 import com.baitapnhom.courseweb.dto.request.RegisterRequest;
 import com.baitapnhom.courseweb.dto.request.UserUpdateRequest;
 import com.baitapnhom.courseweb.entity.User;
