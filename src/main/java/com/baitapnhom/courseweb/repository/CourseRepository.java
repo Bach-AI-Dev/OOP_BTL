@@ -1,10 +1,7 @@
-package com.baitapnhom.courseweb.repository;
+package OOP_BTL_develop.demo.repository;
 
-import com.baitapnhom.courseweb.entity.Course;
-
+import OOP_BTL_develop.demo.entity.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface CourseRepository extends JpaRepository<Course, String> {
 }
