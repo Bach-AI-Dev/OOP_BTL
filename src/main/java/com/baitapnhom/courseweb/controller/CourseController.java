@@ -1,8 +1,8 @@
 package com.baitapnhom.courseweb.controller;
 
-import OOP_BTL_develop.demo.dto.request.CourseCreationRequest;
-import OOP_BTL_develop.demo.entity.Course;
-import OOP_BTL_develop.demo.service.CourseService;
+import com.baitapnhom.courseweb.dto.request.CourseCreationRequest;
+import com.baitapnhom.courseweb.entity.Course;
+import com.baitapnhom.courseweb.service.CoursesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
