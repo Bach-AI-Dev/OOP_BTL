@@ -6,22 +6,35 @@ import jakarta.persistence.*;
 @Table(name = "video_lessons")
 public class VideoLessons {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "lesson_id",length = 36)
-    private String lessonId;
+    @Column(name = "lesson_id")
+    private String id;
 
-    @Column(name = "url")
+    // Liên kết 1-1 với Lesson
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "lesson_id")
+    private Lesson lesson;
+
+    @Column(nullable = false)
     private String url;
 
-    @Column(name = "duration_seconds")
+    @Column(name = "duration_seconds", nullable = false)
     private Integer durationSeconds;
 
-    public String getLessonId() {
-        return lessonId;
+    public String getId() {
+        return id;
     }
 
-    public void setLessonId(String lessonId) {
-        this.lessonId = lessonId;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Lesson getLesson() {
+        return lesson;
+    }
+
+    public void setLesson(Lesson lesson) {
+        this.lesson = lesson;
     }
 
     public String getUrl() {
