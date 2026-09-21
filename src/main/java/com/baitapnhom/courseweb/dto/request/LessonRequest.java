@@ -1,59 +1,49 @@
 package com.baitapnhom.courseweb.dto.request;
 
-public class LessonRequest{
-    private String title;
-    private String description;
-    private String videoUrl;
-    private String thumbnailUrl;
-    private Integer duration;
+public class LessonRequest {
+    private String name;
+    private String type; // Chỉ nhận giá trị 'VIDEO' hoặc 'ASSIGNMENT'
     private Integer lessonOrder;
+    private String videoUrl;
+    private Integer duration;
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public String getDescription() {
-        return description;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getVideoUrl() {
-        return videoUrl;
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Integer getLessonOrder() {
         return lessonOrder;
     }
 
-    public Integer getDuration() {
-        return duration;
+    public void setLessonOrder(Integer lessonOrder) {
+        this.lessonOrder = lessonOrder;
     }
 
-    public String getThumbnailUrl() {
-        return thumbnailUrl;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public String getVideoUrl() {
+        return videoUrl;
     }
 
     public void setVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
     }
 
-    public void setThumbnailUrl(String thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
+    public Integer getDuration() {
+        return duration;
     }
 
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
-
-    public void setLessonOrder(Integer lessonOrder) {
-        this.lessonOrder = lessonOrder;
-    }
-
 }
