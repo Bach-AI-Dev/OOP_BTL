@@ -2,17 +2,42 @@ package com.baitapnhom.courseweb.dto.request;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 
 public class LessonProgressRequest {
     @NotNull(message = "studentId không được để trống")
     private String studentId;
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public String getLessonId() {
+        return lessonId;
+    }
+
+    public void setLessonId(String lessonId) {
+        this.lessonId = lessonId;
+    }
+
+    public Integer getTimeDelta() {
+        return timeDelta;
+    }
+
+    public void setTimeDelta(Integer timeDelta) {
+        this.timeDelta = timeDelta;
+    }
+
+    public Integer getLastPosition() {
+        return lastPosition;
+    }
+
+    public void setLastPosition(Integer lastPosition) {
+        this.lastPosition = lastPosition;
+    }
 
     @NotNull(message = "lessonId không được để trống")
     private String lessonId;

@@ -8,20 +8,25 @@ import com.baitapnhom.courseweb.repository.LessonProgressRepository;
 import com.baitapnhom.courseweb.repository.StudentRepository;
 import com.baitapnhom.courseweb.repository.VideoLessonsRepository;
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 @Transactional
 public class LessonProgressImpl implements ILessonProgressService {
 
     private final LessonProgressRepository progressRepository;
     private final VideoLessonsRepository videoRepository;
     private final StudentRepository studentRepository;
-
+    
+    public LessonProgressImpl(LessonProgressRepository progressRepository, 
+                              VideoLessonsRepository videoRepository, 
+                              StudentRepository studentRepository) {
+        this.progressRepository = progressRepository;
+        this.videoRepository = videoRepository;
+        this.studentRepository = studentRepository;
+    }
 
     @Override
     public LessonProgressResponse updateProgress(LessonProgressRequest request){
