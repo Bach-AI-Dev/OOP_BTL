@@ -1,6 +1,7 @@
 package com.baitapnhom.courseweb.controller;
 
-import com.baitapnhom.courseweb.dto.request.CategoryCreationRequest;
+import com.baitapnhom.courseweb.dto.request.CategoryRequest;
+import com.baitapnhom.courseweb.dto.request.CategoryRequest;
 import com.baitapnhom.courseweb.entity.Category;
 import com.baitapnhom.courseweb.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
     @PostMapping
-    public Category createCategory(@RequestBody CategoryCreationRequest request){
+    public Category createCategory(@RequestBody CategoryRequest request){
         return categoryService.createRequest(request);
     }
     @GetMapping
@@ -29,7 +30,7 @@ public class CategoryController {
         return categoryService.deleteCategory(id);
     }
     @PutMapping("/{id}")
-        public Category updateCategory(@PathVariable String id, @RequestBody CategoryCreationRequest request) {
+        public Category updateCategory(@PathVariable String id, @RequestBody CategoryRequest request) {
         return categoryService.updateCategory(id, request);
     }
 }

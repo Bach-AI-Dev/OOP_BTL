@@ -1,8 +1,8 @@
 package com.baitapnhom.courseweb.controller;
 
-import com.baitapnhom.courseweb.dto.request.CourseCreationRequest;
+import com.baitapnhom.courseweb.dto.request.CourseRequest;
 import com.baitapnhom.courseweb.entity.Course;
-import com.baitapnhom.courseweb.service.CoursesService;
+import com.baitapnhom.courseweb.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +17,7 @@ public class CourseController {
 
     // 1. Tạo khóa học mới (POST)
     @PostMapping
-    public Course createCourse(@RequestBody CourseCreationRequest request) {
+    public Course createCourse(@RequestBody CourseRequest request) {
         return courseService.createRequest(request);
     }
 
@@ -35,7 +35,7 @@ public class CourseController {
 
     // 4. Cập nhật thông tin khóa học (PUT)
     @PutMapping("/{id}")
-    public Course updateCourse(@PathVariable String id, @RequestBody CourseCreationRequest request) {
+    public Course updateCourse(@PathVariable String id, @RequestBody CourseRequest request) {
         return courseService.updateCourse(id, request);
     }
 
