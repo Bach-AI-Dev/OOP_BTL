@@ -2,25 +2,25 @@ package com.baitapnhom.courseweb.dto.request;
 
 import com.baitapnhom.courseweb.enums.Role;
 
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public class RegisterRequest {
 
-    @NotBlank(message = "Username không được để trống!!!!!!!!!!!!!!!!!!!!")
-    @Size(min = 3, max = 50, message = "Username phải có tối thiểu 3 ký tự và tối đa 50 ký tự..............")
+    @NotBlank(message = "USERNAME_EMPTY")
+    @Size(min = 3, max = 50, message = "USERNAME_INVALID")
     private String username;
 
-    @NotBlank(message = "Password không được để trống!!!!!!!!!!!!!!!!!!!!")
-    @Size(min = 6, message = "Password phải có tối thiểu 6 ký tự............")
+    @NotBlank(message = "PASSWORD_EMPTY")
+    @Size(min = 6, message = "PASSWORD_INVALID")
     private String password;
 
-    @NotBlank(message = "Email không được để trống!!!!!!!!!!!!!!!!!!!!")
-    @Email(message = "Email không đúng định dạng...........")
+    @NotBlank(message = "EMAIL_EMPTY")
+    @Pattern(regexp = "^[a-zA-Z][A-Za-z0-9]{5,29}+@(gmail\\.com)$", message = "EMAIL_INVALID")
     private String email;
 
-    private String fullName;    
+    private String fullName;
     private String phone;
     private Role role;
 
