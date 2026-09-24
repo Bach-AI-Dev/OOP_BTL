@@ -4,6 +4,8 @@ import com.baitapnhom.courseweb.dto.request.LessonProgressRequest;
 import com.baitapnhom.courseweb.dto.response.LessonProgressResponse;
 import com.baitapnhom.courseweb.entity.LessonProgress;
 import com.baitapnhom.courseweb.entity.VideoLessons;
+import com.baitapnhom.courseweb.exception.AppException;
+import com.baitapnhom.courseweb.exception.ErrorCode;
 import com.baitapnhom.courseweb.repository.EnrollmentRepository; // ✅ Import thêm Enrollment
 import com.baitapnhom.courseweb.repository.LessonProgressRepository;
 import com.baitapnhom.courseweb.repository.StudentRepository;
@@ -39,7 +41,7 @@ public class LessonProgressImpl implements ILessonProgressService {
         Optional<VideoLessons> videoRequest = videoRepository.findById(request.getLessonId());
 
         if(videoRequest.isEmpty()) {
-            throw new RuntimeException("Không tìm thấy thông tin video bài học!");
+            throw new AppException(ErrorCode.VIDEO_NOT_FOUND);
         }
 
         VideoLessons video = videoRequest.get();
@@ -51,7 +53,7 @@ public class LessonProgressImpl implements ILessonProgressService {
         // Sửa lại tên hàm cho khớp với bên EnrollmentRepository
         boolean isEnrolled = enrollmentRepository.existsByStudentStudentIdAndCourseId(request.getStudentId(), courseId);
         if(!isEnrolled) {
-            throw new RuntimeException("Học viên chưa đăng ký khóa học này, không thể cập nhật tiến độ!");
+            throw new AppException(ErrorCode.ENROLLMENT_NOT_FOUND);
         }
 
         int durationVideo = video.getDurationSeconds();

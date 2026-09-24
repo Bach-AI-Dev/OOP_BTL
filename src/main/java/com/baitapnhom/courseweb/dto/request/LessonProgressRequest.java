@@ -43,7 +43,6 @@ public class LessonProgressRequest {
     private String lessonId;
 
     @NotNull(message = "Thời gian không được để trống")
-    @Min(value = 0,message = "Thời gian không được âm")
     private Integer timeDelta;
 
     @NotNull(message = "Vi tri khong duoc de trong")

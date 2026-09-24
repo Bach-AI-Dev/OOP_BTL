@@ -17,6 +17,9 @@ public enum ErrorCode {
             
     USER_NOT_EXISTED(1009, "User không tồn tại"),
     UNAUTHENTICATED(1010, "Mật khẩu không chính xác hoặc chưa được xác thực"),
+
+    VIDEO_NOT_FOUND(1011, "Không tìm thấy thông tin video bài học!"),
+    ENROLLMENT_NOT_FOUND(1012, "Học viên chưa đăng ký khóa học này, không thể cập nhật tiến độ!")
     ;
 
     private ErrorCode(int code, String message) {
