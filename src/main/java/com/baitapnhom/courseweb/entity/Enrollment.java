@@ -17,12 +17,10 @@ public class Enrollment {
     @Column(name = "id", columnDefinition = "VARCHAR(36)", updatable = false, nullable = false)
     private String id;
 
-    // Giả định Student Entity đã được Thành viên 1 tạo
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id", nullable = false)
     private Student student;
 
-    // Giả định Course Entity đã được Thành viên 2 tạo
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "course_id", nullable = false)
     private Course course;
