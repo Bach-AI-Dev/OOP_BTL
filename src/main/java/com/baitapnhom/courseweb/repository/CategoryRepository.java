@@ -1,6 +1,6 @@
 package com.baitapnhom.courseweb.repository;
 
-import  com.baitapnhom.courseweb.entity.Category;
+import com.baitapnhom.courseweb.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
