@@ -22,6 +22,17 @@ public class LessonProgressImpl implements ILessonProgressService {
     private final StudentRepository studentRepository;
     private final EnrollmentRepository enrollmentRepository; //  Tiêm thêm để check đăng ký
 
+
+    public LessonProgressImpl(LessonProgressRepository progressRepository,
+                              VideoLessonsRepository videoRepository,
+                              StudentRepository studentRepository,
+                              EnrollmentRepository enrollmentRepository) {
+        this.progressRepository = progressRepository;
+        this.videoRepository = videoRepository;
+        this.studentRepository = studentRepository;
+        this.enrollmentRepository = enrollmentRepository;
+    }
+
     @Override
     public LessonProgressResponse updateProgress(LessonProgressRequest request){
 
