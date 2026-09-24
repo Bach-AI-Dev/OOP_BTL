@@ -38,7 +38,6 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(request.getPassword()));
 
         user.setUsername(request.getUsername());
-        user.setPassword(passwordEncoder.encode(request.getPassword()));
         user.setEmail(request.getEmail());
         user.setFullName(request.getFullName());
         user.setPhone(request.getPhone());
