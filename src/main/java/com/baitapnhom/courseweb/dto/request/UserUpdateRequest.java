@@ -8,12 +8,12 @@ import jakarta.validation.constraints.Size;
 
 public class UserUpdateRequest {
 
-    @NotBlank(message = "Password khong duoc de trong..............")
-    @Size(min = 6, message = "Password phai co it nhat 6 ky tu............")
+    @NotBlank(message = "PASSWORD_EMPTY")
+    @Size(min = 6, message = "PASSWORD_INVALID")
     private String password;
 
-    @NotBlank(message = "Email khong duoc de trong.........")
-    @Email(message = "Email khong dung dinh dang...........")
+    @NotBlank(message = "EMAIL_EMPTY")
+    @Email(message = "EMAIL_INVALID")
     private String email;
 
     private String fullName;
